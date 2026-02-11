@@ -1,73 +1,74 @@
-# React + TypeScript + Vite
+# 📊 Control de Gastos Personales
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+¡Bienvenido a **aspp-gastos**! Una aplicación web moderna y funcional diseñada para ayudarte a gestionar tus finanzas personales de manera eficiente. Define un presupuesto, registra tus gastos por categorías y visualiza tu disponibilidad financiera en tiempo real.
 
-Currently, two official plugins are available:
+Este proyecto ha sido desarrollado utilizando **React 19**, **TypeScript** y **Vite**, enfocándose en el uso de *Context API* y *useReducer* para una gestión de estado robusta.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## ✨ Características Principales
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+* **Gestión de Presupuesto:** Establece un presupuesto inicial y visualiza cuánto has gastado y cuánto tienes disponible.
+* **Registro de Gastos:** Añade, edita y elimina gastos de forma sencilla con un formulario intuitivo.
+* **Visualización Gráfica:** Incluye un gráfico circular dinámico que muestra el porcentaje del presupuesto utilizado.
+* **Filtrado por Categorías:** Clasifica tus gastos en categorías como Ahorro, Comida, Casa, Salud, entre otras.
+* **Persistencia de Datos:** Los datos se guardan automáticamente en el `localStorage` para que no se pierdan al recargar la página.
+* **Interfaz Adaptable:** Diseño totalmente responsive y estilizado con **Tailwind CSS**.
+* **Interacciones Intuitivas:** Soporte para gestos de deslizamiento (swipe) para editar o eliminar elementos de la lista.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🛠️ Stack Tecnológico
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+* **Framework:** [React 19](https://react.dev/)
+* **Lenguaje:** [TypeScript](https://www.typescriptlang.org/)
+* **Herramienta de Construcción:** [Vite](https://vitejs.dev/)
+* **Estilos:** [Tailwind CSS v4](https://tailwindcss.com/)
+* **Iconos:** [Heroicons](https://heroicons.com/)
+* **Componentes UI:** [Headless UI](https://headlessui.com/)
+* **Librerías Adicionales:**
+    * `react-circular-progressbar`: Para el gráfico de progreso.
+    * `react-date-picker`: Selector de fechas amigable.
+    * `react-swipeable-list`: Acciones de deslizamiento en listas.
+    * `uuid`: Generación de IDs únicos para los gastos.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 🚀 Instalación y Uso
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Sigue estos pasos para ejecutar el proyecto de forma local:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+1.  **Clona el repositorio:**
+    ```bash
+    git clone [https://github.com/tu-usuario/aspp-gastos.git](https://github.com/tu-usuario/aspp-gastos.git)
+    cd aspp-gastos
+    ```
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+2.  **Instala las dependencias:**
+    Este proyecto utiliza `pnpm` como gestor de paquetes:
+    ```bash
+    pnpm install
+    ```
+
+3.  **Inicia el servidor de desarrollo:**
+    ```bash
+    pnpm dev
+    ```
+
+4.  **Abre tu navegador:**
+    Visita `http://localhost:5173` para empezar a usar la aplicación.
+
+---
+
+## 📂 Estructura del Proyecto
+
+* `src/components/`: Componentes de la interfaz como formularios, modales y listados.
+* `src/context/`: Configuración del Contexto para la gestión del estado global.
+* `src/hooks/`: Hooks personalizados para acceder a la lógica del presupuesto (`useBudget`).
+* `src/reducers/`: Lógica centralizada para las acciones y el estado de la aplicación.
+* `src/helpers/`: Utilidades para el formateo de moneda y fechas.
+* `src/types/`: Definiciones de tipos e interfaces de TypeScript.
+
+---
+
+Desarrollado con ❤️ por Luis Nava.
